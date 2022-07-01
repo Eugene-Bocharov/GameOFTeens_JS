@@ -5,7 +5,7 @@ class App extends Component {
     render() { 
         return (
             <>
-                <h1 className={styles.header}>Hello, user! Make your first finance wheel!</h1>
+                <h1 className={styles.mainTitle}>Hello, user! Make your first finance wheel!</h1>
             </>
         );
     }
