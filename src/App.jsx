@@ -25,10 +25,18 @@ class App extends Component {
         }
     }
 
+    setLanguage = (lang) => {
+        this.setState({
+          currentLanguage: lang,
+        });
+    };
+
     render() { 
         return (
             <>
-                <h1 className={styles.mainTitle}>{this.props.t('Greeting')}</h1>
+                <h1 className={styles.mainTitle}>{this.props.t("Greeting")}</h1>
+                {/* <button type='button' onClick={this.setLanguage("ua")}>Toggle lang to ua</button> */}
+
             </>
         );
     }
