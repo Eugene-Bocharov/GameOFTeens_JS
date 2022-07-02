@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./App.module.css";
 import { withTranslation } from "react-i18next";
+import HomePage from "./pages/HomePage";
 
 class App extends Component {
   state = {
@@ -26,11 +27,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <>
-        <h1 className={styles.mainTitle}>{this.props.t("Greeting")}</h1>
-      </>
-    );
+    return <HomePage />;
   }
 }
 
