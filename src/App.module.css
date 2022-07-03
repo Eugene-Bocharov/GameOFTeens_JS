@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+*{
+    box-sizing: border-box;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    color: aliceblue;
+}
+
+body{
+    background-color: #272727;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.toggle_divider{
+    display: flex;
+    align-items: center;
+}
+
+.toggle_label{
+        margin-left: 30px;
+}
+
+.toggle_title{
+    color: aliceblue;
+font-family: 'Saira', sans-serif;
+margin-left: 20px;
+margin-bottom: 10px;
+}
+
+.mainTitle {
+color: aliceblue;
+font-family: 'Saira', sans-serif;
+margin-left: 56px;
+}
+
+.components_divider{
+    display: flex;
+    /* flex-direction: column; */
+}
+
+@media screen and (max-width: 880px) {
+    .components_divider{
+        display: flex;
+        flex-direction: column;
+    }
+
+    *{
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
+        color: aliceblue;
+    }
+}
+
