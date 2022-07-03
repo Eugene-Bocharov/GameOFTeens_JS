@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 
 const INITIAL_STATE = {
   finances: {
-    finance1: { name: "", sum: "", date: "" },
+    finance1: { title: "", sum: "", date: "" },
   },
   currentTheme: "",
   count: 1,
@@ -61,14 +61,14 @@ class CreateForm extends React.Component {
 
   reset = () => {
     this.setState({
-      name: "",
+      title: "",
       sum: "",
       date: "",
     });
   };
 
   render() {
-    const { name, sum, date } = this.state;
+    const { title, sum, date } = this.state;
 
     console.log(this.state);
     return (
@@ -78,7 +78,7 @@ class CreateForm extends React.Component {
         name="finance wheel"
         encType="multipart/form-data"
       >
-        <h2>finance wheel:</h2>
+        <h2 name={this.props.t("finance wheel")}>finance wheel:</h2>
 
         {[...Array(this.state.count)].map(() => (
           <Input key={nanoid()} />

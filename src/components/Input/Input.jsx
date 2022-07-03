@@ -1,4 +1,5 @@
 import React from "react";
+import { withTranslation } from "react-i18next";
 import styles from "../Home/Home.module.css";
 
 class Input extends React.Component {
@@ -16,9 +17,9 @@ class Input extends React.Component {
             className={styles.CreateFormInput}
             type="text"
             autoFocus="off"
-            placeholder={"Part of wheel"}
+            placeholder={this.props.t("Part of wheel")}
             name="name"
-            value={this.props.name}
+            value={this.props.title}
             onChange={this.handleChange}
             required
           />
@@ -28,7 +29,7 @@ class Input extends React.Component {
             className={styles.CreateFormInput}
             type="number"
             autoFocus="off"
-            placeholder={"Sum of money"}
+            placeholder={this.props.t("Sum of money")}
             name="sum"
             value={this.props.sum}
             onChange={this.handleChange}
@@ -40,7 +41,7 @@ class Input extends React.Component {
             className={styles.CreateFormInput}
             type="date"
             autoFocus="off"
-            placeholder={"Date"}
+            placeholder={this.props.t("Date")}
             name="date"
             value={this.props.date}
             onChange={this.handleChange}
@@ -51,4 +52,4 @@ class Input extends React.Component {
     );
   }
 }
-export default Input;
+export default withTranslation()(Input);

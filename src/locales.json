@@ -1,9 +1,17 @@
 {
     "en": {
-        "Greeting": "Hello, user! Make your first finance wheel!"
+      "translation": {
+        "finance wheel": "finance wheel",
+  "Part of wheel": "Part of wheel",
+  "Sum of money": "Sum of money",
+  "Date":"Date"
+      }
     },
-
     "ua": {
-        "Greeting": "Привіт, користувачу! Зроби своє перше фінансове колесо!"
+      "translation": {"finance wheel":"Колесо фінансів",
+        "Part of wheel": "Частина колеса",
+        "Sum of money": "Сума грошей",
+        "Date":"Дата"
+      }
     }
-}
+  }
