@@ -1,59 +1,100 @@
 import React, { Component } from "react";
 import styles from "./App.module.css";
 import { withTranslation } from "react-i18next";
-import HomePage from "./pages/HomePage";
-import Navbar from "./components/Navbar/Navbar";
-import route from "../../route";
+import Datacapture from "./components/DataCapture/Datacapture";
+import Diagram from "./Diagram";
+import Toggle from "react-toggle";
+import "react-toggle/style.css";
+
 class App extends Component {
   state = {
-    currentLanguage: "",
+    currentLanguage: null,
+    isChartChanged: false,
   };
 
   componentDidMount() {
-    this.setState({
-      currentLanguage: localStorage.getItem("language"),
-    });
+    const language = localStorage.getItem("language");
+
+    if (language !== "null") {
+      this.setState({
+        currentLanguage: language,
+      });
+
+      localStorage.setItem("language", language);
+    } else {
+      this.setState({
+        currentLanguage: "en",
+      });
+
+      localStorage.setItem("language", "en");
+    }
   }
+
   setLanguage = (lang) => {
     this.setState({
       currentLanguage: lang,
     });
   };
-  render() {
-    // return ;
 
+  handleTofuChange = () => {
+    if (this.state.isChartChanged === false) {
+      this.setState({ isChartChanged: true });
+      localStorage.setItem('isChartChanged', JSON.stringify(true))
+    }else{
+      this.setState({ isChartChanged: false});
+      localStorage.setItem('isChartChanged', JSON.stringify(false))
+    }
+    console.log(this.state.isChartChanged);
+  };
+
+  render() {
     return (
-      <React.Fragment>
-        <Navbar
-          language={this.state.currentLanguage}
-          setLang={this.setLanguage}
-        />
-        <HomePage />
-      </React.Fragment>
+      <>
+<div className={styles.toggle_divider}>      
+    <h1 className={styles.mainTitle}>{this.props.t("finance weel")}</h1>
+
+<label className={styles.toggle_label}>
+  <Toggle
+    defaultChecked={this.state.isChartChanged}
+    icons={false}
+    onChange={this.handleTofuChange}
+  />
+  <span className={styles.toggle_title} >{this.state.isChartChanged ? 'Pie Chart' : 'Bar Chart'}</span>
+</label>
+</div>
+
+        {localStorage.setItem(
+          "UserData",
+          JSON.stringify([
+            {
+              item: "Career",
+              quantity: 12500,
+              date: "03.07",
+            },
+            {
+              item: "Enviroment",
+              quantity: 7500,
+              date: "03.07",
+            },
+            {
+              item: "Career",
+              quantity: 12500,
+              date: "03.07",
+            },
+            {
+              item: "Career",
+              quantity: 12500,
+              date: "03.07",
+            },
+          ])
+        )}
+        <div className={styles.components_divider}>
+          <Datacapture />
+          <Diagram />
+        </div>
+      </>
     );
-    // <Switch>
-    //   (<HomePage />)
-    //   <Navbar
-    //     language={this.state.currentLanguage}
-    //     setLang={this.setLanguage}
-    //   />
-    // </Switch>
   }
 }
+
 export default withTranslation()(App);
-//   const language = localStorage.getItem("language");
-
-//   if (language !== "null") {
-//     this.setState({
-//       currentLanguage: language,
-//     });
-
-//     localStorage.setItem("language", language);
-//   } else {
-//     this.setState({
-//       currentLanguage: "en",
-//     });
-
-//     localStorage.setItem("language", "en");
-//   }
-//
