@@ -2,9 +2,19 @@ import { useState } from "react";
 import PieChart from "./components/Piechart/Piechart";
 import BarChart from "./components/Piechart/Barchart";
 import Doughnutchart from "./components/Piechart/Doughnut";
+import { styles } from "./Diagram.module.css";
 const UserData = JSON.parse(localStorage.getItem('UserData'))
 
+function data_analyse(usrData) {
+  const x = usrData.datasets[0].data;
+  const y = usrData.labels;
+console.log(y);
+console.log(x);
+}
+
 function Diagram() {
+// const data_analyse = ()=>{}
+
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.item),
     datasets: [
@@ -26,13 +36,17 @@ function Diagram() {
       },
     ],
   });
+  console.log(userData);
+  data_analyse(userData)
   const current_chart = JSON.parse(localStorage.getItem('isChartChanged'))
+  console.log(userData);
 console.log('yo. chart is' + current_chart)
   return (
     <div className="App">
       <div style={{ width: 600 }}>
        {current_chart ?  <PieChart chartData={userData} /> : <BarChart chartData={userData}/>}
       </div> 
+
     </div>
   );
 }
