@@ -81,10 +81,10 @@ padding-left: 20px;
     padding-left: 20px;
 }
 
-@media screen and (max-width: 680px) {
-    .capture_container{
+/* @media screen and (max-width: 680px) {
+    .capture_container{ */
         /* background-color: #b4b4b4; */
-        width: 100%;
+        /* width: 100%;
         max-width: 300px;
         margin-left: 17%;
         margin-right: 20%;
@@ -129,15 +129,30 @@ padding-left: 20px;
             text-align: left;
             padding-left: 20px;
         }
-}
+} */
 
 @media screen and (max-width: 880px) {
     .capture_container{
         width: 100%;
         max-width: 300px;
-        margin-left: 17%;
+        /* margin-left: 17%; */
         /* margin-right: 20%; */
         margin-top: 100px;
         margin-bottom: 10%;
+    }
+
+    .calc_items_button {
+        margin-left: 15px;
+    }
+
+    .capture_container {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .add_item_button {
+        width: 156px;
+        height: 53px;
+        margin-right: 20px;
     }
 }
