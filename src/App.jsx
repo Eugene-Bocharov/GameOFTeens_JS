@@ -7,61 +7,13 @@ import Toggle from "react-toggle";
 import "react-toggle/style.css";
 
 class App extends Component {
-  state = {
-    currentLanguage: null,
-    isChartChanged: false,
-  };
-
-  componentDidMount() {
-    const language = localStorage.getItem("language");
-
-    if (language !== "null") {
-      this.setState({
-        currentLanguage: language,
-      });
-
-      localStorage.setItem("language", language);
-    } else {
-      this.setState({
-        currentLanguage: "en",
-      });
-
-      localStorage.setItem("language", "en");
+    state = {
+        
     }
-  }
-
-  setLanguage = (lang) => {
-    this.setState({
-      currentLanguage: lang,
-    });
-  };
-
-  handleTofuChange = () => {
-    if (this.state.isChartChanged === false) {
-      this.setState({ isChartChanged: true });
-      localStorage.setItem('isChartChanged', JSON.stringify(true))
-    }else{
-      this.setState({ isChartChanged: false});
-      localStorage.setItem('isChartChanged', JSON.stringify(false))
-    }
-    console.log(this.state.isChartChanged);
-  };
-
-  render() {
-    return (
-      <>
-<div className={styles.toggle_divider}>      
-    <h1 className={styles.mainTitle}>{this.props.t("finance weel")}</h1>
-
-<label className={styles.toggle_label}>
-  <Toggle
-    defaultChecked={this.state.isChartChanged}
-    icons={false}
-    onChange={this.handleTofuChange}
-  />
-  <span className={styles.toggle_title} >{this.state.isChartChanged ? 'Pie Chart' : 'Bar Chart'}</span>
-</label>
-</div>
+    render() { 
+        return (
+            <>
+                <h1 className={styles.mainTitle}>Hello, user! Make your first finance wheel!</h1>
 
         {localStorage.setItem(
           "UserData",
