@@ -1,0 +1,88 @@
+* {
+  outline: 0 !important;
+}
+
+.Container {
+  width: 900px;
+  height: auto;
+  margin: auto;
+  border: 1px solid #e6effb;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.Container h2 {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.CreateForm {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+
+  height: 48px;
+  max-width: 130px;
+
+  border-radius: 10px;
+  align-items: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.CreateForm label {
+  border-radius: 10px;
+  margin: 0;
+}
+
+.CreateFormInput {
+  margin-bottom: 16px;
+  background: #ffffff;
+  /*border: 1px solid red;
+  */
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding-left: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.CreateFormInput::placeholder {
+  text-align: center;
+}
+.CreateFormButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 14px;
+  width: 120px;
+  height: 32px;
+  background: #f8991c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  /* Inside auto layout */
+  flex-grow: 0;
+
+  margin-top: 20px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
