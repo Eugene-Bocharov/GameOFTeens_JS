@@ -46,19 +46,20 @@ body {
   .components_divider {
     display: flex;
     flex-direction: column;
-    margin-left: 0;
-    justify-content: left;
-  }
-  .toggle_divider {
-    display: flex;
     align-items: center;
-    justify-content: left;
   }
 
   * {
     box-sizing: border-box;
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+        margin-left: auto; */
     color: aliceblue;
+  }
+
+  .mainTitle {
+    text-align: center;
+    width: auto;
+    margin: 0;
+    margin-top: 20px;
   }
 }
